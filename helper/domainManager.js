@@ -207,7 +207,7 @@ async function createAmplifySubdomain(subdomainName) {
       console.error(`Error creating subdomain ${subdomainName}:`, error);
       reject(error.message);
     }
-  });
+ })
 }
 
 // async function createAmplifySubdomain(subdomainName) {

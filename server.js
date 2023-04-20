@@ -23,6 +23,10 @@ app.use((err, req, res, next) => {
     })
 })
 
+app.get('/status', (req, res) => {
+    res.status(200).send("OK")
+})
+
 
 // routes
 app.use("/auth", require("./routes/auth.routes"))
