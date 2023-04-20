@@ -15,8 +15,9 @@ const rootDomain = "ztroo.com";
 
 // github constants
 const repoName = "domain-mapper-client";
-const remoteUrl = `https://github.com/srshahare/domain-mapper-client.git`;
+// const remoteUrl = `https://github.com/srshahare/domain-mapper-client.git`;
 const token = process.env.GITHUB_TOKEN;
+const remoteUrl = `https://srshahare:${token}@github.com/srshahare/domain-mapper-client.git`;
 
 process.env.GOOGLE_APPLICATION_CREDENTIALS = keyFilename;
 
@@ -181,10 +182,10 @@ async function createAmplifySubdomain(subdomainName) {
       //   `https://${username}:${password}@`
       // );
       process.env.GITHUB_TOKEN = token;
-      const remoteWithCredentials = remoteUrl.replace(
-        "https://",
-        `https://${token}@`
-      );
+      // const remoteWithCredentials = remoteUrl.replace(
+      //   "https://",
+      //   `https://${token}@`
+      // );
 
       // Check if the remote named 'origin' exists, and remove it if necessary
       const remotes = await git.getRemotes(true);
