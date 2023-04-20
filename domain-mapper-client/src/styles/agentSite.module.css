@@ -1,0 +1,13 @@
+.container {
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    height: 100vh;
+}
+
+.homeCard {
+    width: 40%;
+    background: #eee;
+    border-radius: 8px;
+    padding: 2rem;
+}

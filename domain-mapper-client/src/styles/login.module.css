@@ -1,0 +1,22 @@
+.container {
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    height: 100vh;
+}
+
+.loginCard {
+    width: 350px;
+    background: #eee;
+    padding: 2rem;
+    border-radius: 1rem;
+}
+
+.loginCard h3 {
+    margin-bottom: 2rem;
+}
+
+.link {
+    font-weight: 500;
+    color: rgb(0, 96, 223);
+}
