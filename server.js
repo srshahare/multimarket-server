@@ -4,15 +4,15 @@ const cors = require("cors");
 const fs = require("fs")
 const https = require("https")
 
-const key = fs.readFileSync('private.key')
-const cert = fs.readFileSync('certificate.crt')
+// const key = fs.readFileSync('private.key')
+// const cert = fs.readFileSync('certificate.crt')
 
 const app = express();
 
-const cred = {
-    key,
-    cert
-}
+// const cred = {
+//     key,
+//     cert
+// }
 
 const db = require("./models")
 
@@ -37,9 +37,9 @@ app.get('/status', (req, res) => {
     res.status(200).send("OK")
 })
 
-app.get('/.well-known/pki-validation/361E42BB137CD76D49E31A55417BBAD4.txt', (req, res) => {
-    res.sendFile('/home/ec2-user/multimarket-server/361E42BB137CD76D49E31A55417BBAD4.txt')
-})
+// app.get('/.well-known/pki-validation/361E42BB137CD76D49E31A55417BBAD4.txt', (req, res) => {
+//     res.sendFile('/home/ec2-user/multimarket-server/361E42BB137CD76D49E31A55417BBAD4.txt')
+// })
 
 // routes
 app.use("/auth", require("./routes/auth.routes"))
