@@ -51,5 +51,22 @@ app.listen(PORT, () => {
   console.log("Server is listening on port :", PORT);
 });
 
-const httpsServer = https.createServer(cred, app);
-httpsServer.listen(8443)
+// const httpsServer = https.createServer(cred, app);
+// httpsServer.listen(8443)
+
+// server {
+//     listen 443 ssl;
+//     server_name 3.110.179.216;
+//     ssl                  on;
+//     ssl_certificate      /etc/ssl/certificate.crt;
+//     ssl_certificate_key  /etc/ssl/private.key;
+
+//     location / {
+//         proxy_pass http://localhost:5000;
+//         proxy_http_version 1.1;
+//         proxy_set_header Upgrade $http_upgrade;
+//         proxy_set_header Connection 'upgrade';
+//         proxy_set_header Host $host;
+//         proxy_cache_bypass $http_upgrade;
+//     }
+// }
