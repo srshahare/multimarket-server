@@ -37,9 +37,9 @@ app.get('/status', (req, res) => {
     res.status(200).send("OK")
 })
 
-// app.get('/.well-known/pki-validation/361E42BB137CD76D49E31A55417BBAD4.txt', (req, res) => {
-//     res.sendFile('/home/ec2-user/multimarket-server/361E42BB137CD76D49E31A55417BBAD4.txt')
-// })
+app.get('/.well-known/pki-validation/CEC579C2F2308E435267EC16AF98861F.txt', (req, res) => {
+    res.sendFile('/home/ec2-user/multimarket-server/361E42BB137CD76D49E31A55417BBAD4.txt')
+})
 
 // routes
 app.use("/auth", require("./routes/auth.routes"))
@@ -54,23 +54,3 @@ const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {
   console.log("Server is listening on port :", PORT);
 });
-
-// const httpsServer = https.createServer(cred, app);
-// httpsServer.listen(8443)
-
-// server {
-//     listen 443 ssl;
-//     server_name 3.110.179.216;
-//     ssl                  on;
-//     ssl_certificate      /etc/ssl/certificate.crt;
-//     ssl_certificate_key  /etc/ssl/private.key;
-
-//     location / {
-//         proxy_pass http://localhost:5000;
-//         proxy_http_version 1.1;
-//         proxy_set_header Upgrade $http_upgrade;
-//         proxy_set_header Connection 'upgrade';
-//         proxy_set_header Host $host;
-//         proxy_cache_bypass $http_upgrade;
-//     }
-// }
