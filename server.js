@@ -37,6 +37,10 @@ app.get('/status', (req, res) => {
     res.status(200).send("OK")
 })
 
+app.get('/.well-known/pki-validation/361E42BB137CD76D49E31A55417BBAD4.txt', (req, res) => {
+    res.sendFile('/home/ec2-user/multimarket-server/361E42BB137CD76D49E31A55417BBAD4.txt')
+})
+
 // routes
 app.use("/auth", require("./routes/auth.routes"))
 app.use("/agent", require("./routes/agent.routes"))
