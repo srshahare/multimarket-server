@@ -38,7 +38,7 @@ app.get('/status', (req, res) => {
 })
 
 app.get('/.well-known/pki-validation/CEC579C2F2308E435267EC16AF98861F.txt', (req, res) => {
-    res.sendFile('/home/ec2-user/multimarket-server/361E42BB137CD76D49E31A55417BBAD4.txt')
+    res.sendFile('/home/ec2-user/multimarket-server/CEC579C2F2308E435267EC16AF98861F.txt')
 })
 
 // routes
@@ -53,4 +53,4 @@ const PORT = process.env.PORT || 5000;
 
 app.listen(PORT, () => {
   console.log("Server is listening on port :", PORT);
-});
+}); 
