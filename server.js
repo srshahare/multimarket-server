@@ -3,7 +3,7 @@ const express = require("express");
 const cors = require("cors");
 const fs = require("fs")
 
-const file = fs.readFileSync('./E943C0AC5EE81E86C6FC504FFF3714BE.txt')
+const file = fs.readFileSync('./B0346B382AD3C1987E5F5FA7FC198445.txt')
 
 const app = express();
 
@@ -39,7 +39,7 @@ app.use("/user", require("./routes/user.routes"))
 app.use("/member", require("./routes/member.routes"))
 
 
-app.get("/.well-known/pki-validation/E943C0AC5EE81E86C6FC504FFF3714BE.txt", (req, res) => {
+app.get("/.well-known/pki-validation/B0346B382AD3C1987E5F5FA7FC198445.txt", (req, res) => {
     res.sendFile(file)
 })
 
