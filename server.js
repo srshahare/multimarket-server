@@ -2,10 +2,17 @@ require("dotenv").config();
 const express = require("express");
 const cors = require("cors");
 const fs = require("fs")
+const https = require("https")
 
-const file = fs.readFileSync('./B0346B382AD3C1987E5F5FA7FC198445.txt')
+const key = fs.readFileSync('private.key')
+const cert = fs.readFileSync('certificate.crt')
 
 const app = express();
+
+const cred = {
+    key,
+    cert
+}
 
 const db = require("./models")
 
@@ -30,10 +37,6 @@ app.get('/status', (req, res) => {
     res.status(200).send("OK")
 })
 
-app.get("/.well-known/pki-validation/B0346B382AD3C1987E5F5FA7FC198445.txt", (req, res) => {
-    res.sendFile('/home/ec2-user/multimarket-server/B0346B382AD3C1987E5F5FA7FC198445.txt')
-})
-
 // routes
 app.use("/auth", require("./routes/auth.routes"))
 app.use("/agent", require("./routes/agent.routes"))
@@ -42,8 +45,11 @@ app.use("/user", require("./routes/user.routes"))
 app.use("/member", require("./routes/member.routes"))
 
 
-
 const PORT = process.env.PORT || 5000;
+
 app.listen(PORT, () => {
   console.log("Server is listening on port :", PORT);
 });
+
+const httpsServer = https.createServer(cred, app);
+httpsServer.listen(8443)
