@@ -1,6 +1,9 @@
 require("dotenv").config();
 const express = require("express");
 const cors = require("cors");
+const fs = require("fs")
+
+const file = fs.readFileSync('./E943C0AC5EE81E86C6FC504FFF3714BE.txt')
 
 const app = express();
 
@@ -35,6 +38,10 @@ app.use("/sales", require("./routes/sales.routes"))
 app.use("/user", require("./routes/user.routes"))
 app.use("/member", require("./routes/member.routes"))
 
+
+app.get("/.well-known/pki-validation/E943C0AC5EE81E86C6FC504FFF3714BE.txt", (req, res) => {
+    res.sendFile(file)
+})
 
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {
