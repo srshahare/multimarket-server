@@ -37,9 +37,9 @@ app.get('/status', (req, res) => {
     res.status(200).send("OK")
 })
 
-app.get('/.well-known/pki-validation/CEC579C2F2308E435267EC16AF98861F.txt', (req, res) => {
-    res.sendFile('/home/ec2-user/multimarket-server/CEC579C2F2308E435267EC16AF98861F.txt')
-})
+// app.get('/.well-known/pki-validation/CEC579C2F2308E435267EC16AF98861F.txt', (req, res) => {
+//     res.sendFile('/home/ec2-user/multimarket-server/CEC579C2F2308E435267EC16AF98861F.txt')
+// })
 
 // routes
 app.use("/auth", require("./routes/auth.routes"))
